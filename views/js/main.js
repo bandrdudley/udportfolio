@@ -490,6 +490,7 @@ console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "
 // Used by updatePositions() to decide when to log the average time per frame
 var frame = 0;
 
+
 // Logs the average amount of time per 10 frames needed to move the sliding background pizzas on scroll.
 function logAverageFrame(times) {   // times is the array of User Timing measurements from updatePositions()
   var numberOfEntries = times.length;
@@ -511,9 +512,9 @@ function updatePositions() {
   //var items = document.querySelectorAll('.mover');
   var items = document.getElementsByClassName('mover');
   var top = document.body.scrollTop / 1250;
-  console.log("items= "+items.length);
-  var size = items.length;
-  for (var i = 0; i < size; i++) {
+  var numItems = items.length;
+  console.log("numItems= "+numItems);
+  for (var i = 0; i < numItems; i++) {
     var phase = Math.sin(top + (i % 5));
 	//console.log(phase, top);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
@@ -530,7 +531,7 @@ function updatePositions() {
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', requestAnimationFrame(updatePositions));
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {

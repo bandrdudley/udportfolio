@@ -1,3 +1,15 @@
+### Steps to Run the Project
+
+1. Navigate to the following url: http://bandrdudley.github.io/udportfolio/
+1. Click the Cam's Pizzeria link to test the FPS for the pizza.html page
+
+
+### Steps to Optimize the Page
+
+1.
+1.
+1.
+
 ## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
