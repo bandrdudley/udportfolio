@@ -1,14 +1,44 @@
 ### Steps to Run the Project
 
-1. Navigate to the following url: http://bandrdudley.github.io/udportfolio/
+1. To test PageSpeed Insights input the following url: http://bandrdudley.github.io/udportfolio/
+1. To test index.html, navigate to the following url: http://bandrdudley.github.io/udportfolio/
 1. Click the Cam's Pizzeria link to test the FPS for the pizza.html page
 
+* Scroll up and down to test for FPS of 60
+
+* Scroll down to Our Pizzas! to Change Pizza Slices with the Slider
 
 ### Steps to Optimize the Page
 
-1.
-1.
-1.
+index.html
+
+* Image Magick convert with both profile and pizzaeria images
+
+	 -quality 75 -strip -resize 75
+
+	pizzaeria image: -width 100
+
+* Inline Style.css and Google Fonts
+
+* google analytics, added async to script tag
+
+main.js
+
+* Extracted the var pizzasDiv out of the for loop, only created one time
+
+* function updatePositions:
+
+> Created vars top and numItems, extracted out of for loop
+
+> Replaced var items = document.querySelectorAll('.mover'); getElementsByClassName is much faster
+
+* functionChangePizzaSlices: 
+
+> Extracted document.querySelectorAll(".randomPizzaContainer") out of loop in one variable
+
+> Move dx and newwidth creation outside of the loop, since they the same values for all containers
+
+* Replaced 200 moving pizzas in background with 40, this looks like it fills the screen
 
 ## Website Performance Optimization portfolio project
 
