@@ -9,7 +9,7 @@
 
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
 
-
+<!-- Inline Style.css and Google Fonts -->
     <style>
 	/* cyrillic-ext */
 @font-face {
@@ -185,12 +185,14 @@ footer span { float: right; font-style: italic; }
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
+	<!-- google analytics, added async to script tag -->
     <script async src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
   </head>
 
   <body>
     <header>
+	  <!-- Optimized profile image with ImageMagick -quality 75 -strip -resize 75 --> 
       <a href="/"><img src="img/alamo_small_compressed.jpg"></a>
       <p>Brian Dudley<br><span>Web Developer</span></p>
     </header>
@@ -219,7 +221,7 @@ footer span { float: right; font-style: italic; }
             <a href="project-mobile.html">Mobile Web Development</a>
             <p>Making mobile apps isn't so hard after all.</p>
           </li>
-
+		  <!-- Optimized pizzeria image with ImageMagick -quality 75 -strip -resize 75 width 100px --> 
           <li>
             <img style="width: 100px;" src="views/images/pizzeria_100.jpg">
             <a href="views/pizza.html">Cam's Pizzeria</a>

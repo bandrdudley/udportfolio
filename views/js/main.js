@@ -449,14 +449,13 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-	  console.log("changePizzaSizes");
 	// Reduce container creation to one time and out of the loop
 	var container = document.querySelectorAll(".randomPizzaContainer");
-	// Move dx and newwidth creation outside of the loop, since they 
-	// sincw they are the same values for all containers
+	// Move dx and newwidth creation outside of the loop, since 
+	// they are the same values for all containers
 	var dx = determineDx(container[0], size);
     var newwidth = (container[0].offsetWidth + dx) + 'px';
-	console.log("changePizzaSlices= "+dx, newwidth);
+	//console.log("changePizzaSlices= "+dx, newwidth);
     for (var i = 0; i < container.length; i++) {
       container[i].style.width = newwidth;
     }
@@ -509,14 +508,15 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  //var items = document.querySelectorAll('.mover');
+  // Replaced var items = document.querySelectorAll('.mover'); getElementsByClassName is much faster
   var items = document.getElementsByClassName('mover');
+  // Created vars top and numItems, extracted out of for loop
   var top = document.body.scrollTop / 1250;
   var numItems = items.length;
   console.log("numItems= "+numItems);
   for (var i = 0; i < numItems; i++) {
     var phase = Math.sin(top + (i % 5));
-	//console.log(phase, top);
+	console.log(phase, top);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -531,12 +531,13 @@ function updatePositions() {
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', requestAnimationFrame(updatePositions));
+window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  // Replaced 200 moving pizzas in background with 40, this looks like it fills the screen
   for (var i = 0; i < 40; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
