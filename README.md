@@ -28,9 +28,11 @@ main.js
 
 * function updatePositions:
 
+> Store those 5 positions in an array since the same 5 positions are calculated no matter how many elements
+
 > Created vars top and numItems, extracted out of for loop
 
-> Replaced var items = document.querySelectorAll('.mover'); getElementsByClassName is much faster
+> Replaced querySelectorAll with getElementsByClassName is much faster
 
 * functionChangePizzaSlices: 
 
@@ -38,7 +40,7 @@ main.js
 
 > Move dx and newwidth creation outside of the loop, since they the same values for all containers
 
-* Replaced 200 moving pizzas in background with 40, this looks like it fills the screen
+* Replaced 200 moving pizzas in background by calculating elements dynamically : intFrameHeight / ( 100px pizza height / 5 pizzas per row )
 
 ## Website Performance Optimization portfolio project
 
